@@ -1,4 +1,3 @@
-target/
 pom.xml.tag
 pom.xml.releaseBackup
 pom.xml.versionsBackup
@@ -8,3 +7,82 @@ dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
 .mvn/wrapper/maven-wrapper.jar
+
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+*.mvn
+*.DS_Store
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+Last login: Thu May  6 10:30:20 on ttys000
+ajaymaurya@Ajays-MacBook-Pro ~ % cd eclipse-workspace
+ajaymaurya@Ajays-MacBook-Pro eclipse-workspace % ls
+AutomaticTicketGenerator
+PAppletDemo
+UCSDUnfoldingMaps
+automatic_ticket_generator
+automatic_ticket_generator_elasticsearch
+automatic_ticket_generator_mongod_support
+automatic_ticket_generator_redisClient
+HELP.md
+automatic_ticket_generator_sqlSupport
+elasticsearch
+junit_practice
+mongo_practice
+parking_slot
+parking_test
+redis_practice
+spring_boot_demo
+test
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+.DS_Store
+*.DS_Store
+.mvn
+mvnw.cmd
+target
+mvnw
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+".gitignore" 39L, 442C
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
