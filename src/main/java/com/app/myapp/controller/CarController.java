@@ -3,8 +3,7 @@ import com.app.myapp.pojo.ApiResponse;
 import com.app.myapp.pojo.Car;
 import com.app.myapp.pojo.Slot;
 import com.app.myapp.service.ICarService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,8 +17,6 @@ import java.util.Map;
 @RestController
 @RequestMapping("/cars")
 public class CarController extends Throwable{
-
-    private static final Logger logger= LoggerFactory.getLogger(CarController.class);
 
     @Autowired
     private ICarService carService;
@@ -36,7 +33,7 @@ public class CarController extends Throwable{
                 return new ResponseEntity<>(response, HttpStatus.OK);
             }
         } catch (Exception e) {
-            logger.info("exception in getAllCarDetails:"+e);
+            System.out.println("exception in getAllCarDetails:"+e);
         }
         return new ResponseEntity<>(ApiResponse.generateResponse(false,"car list empty"),HttpStatus.NOT_FOUND);
     }
@@ -53,7 +50,7 @@ public class CarController extends Throwable{
                 return new ResponseEntity<>(response, HttpStatus.OK);
             }
         } catch (Exception e) {
-            logger.info("err in getCarById" + e);
+            System.out.println("err in getCarById" + e);
         }
         return new ResponseEntity<>(ApiResponse.generateResponse(false,"car not found with "+plateNumber),HttpStatus.NOT_FOUND);
     }
@@ -70,7 +67,7 @@ public class CarController extends Throwable{
                 return new ResponseEntity<>(response, HttpStatus.OK);
             }
         } catch (RuntimeException e) {
-            logger.info("exception in carEntry:"+e);
+            System.out.println("exception in carEntry:"+e);
         }
         return new ResponseEntity<>(ApiResponse.generateResponse(false,"slot not available"),HttpStatus.NOT_FOUND);
     }
@@ -86,7 +83,7 @@ public class CarController extends Throwable{
                 return new ResponseEntity<>(response, HttpStatus.OK);
             }
         } catch (RuntimeException e) {
-            logger.info("error in car exit "+e);
+            System.out.println("error in car exit "+e);
         }
         return new ResponseEntity<>(ApiResponse.generateResponse(false,"car not found "+plateNumber),HttpStatus.NOT_FOUND);
     }
@@ -104,7 +101,7 @@ public class CarController extends Throwable{
                 return new ResponseEntity<>(response, HttpStatus.OK);
             }
         }catch (Exception e){
-            logger.info(e.toString());
+            System.out.println(e.toString());
         }
         return new ResponseEntity<>(ApiResponse.generateResponse(false,"slot not found"),HttpStatus.NOT_FOUND);
     }
@@ -121,7 +118,7 @@ public class CarController extends Throwable{
                 return new ResponseEntity<>(response, HttpStatus.OK);
             }
         }catch (Exception e){
-            logger.info("in getCarByColor:"+e);
+            System.out.println("in getCarByColor:"+e);
         }
         return new ResponseEntity<>(ApiResponse.generateResponse(false,"car not found with "+color),HttpStatus.NOT_FOUND);
     }

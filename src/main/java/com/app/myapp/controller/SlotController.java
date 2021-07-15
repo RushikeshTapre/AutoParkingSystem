@@ -4,8 +4,6 @@ import com.app.myapp.pojo.Car;
 import com.app.myapp.pojo.Slot;
 import com.app.myapp.service.ISlotService;
 import com.app.myapp.service.SlotServiceImpl;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,9 +17,7 @@ import java.util.Optional;
 @RequestMapping("/slots")
 public class SlotController {
 
-    private static final Logger logger= LoggerFactory.getLogger(SlotController.class);
-
-    @Autowired
+   @Autowired
     SlotServiceImpl slotService;
 
     @GetMapping

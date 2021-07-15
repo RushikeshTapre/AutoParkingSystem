@@ -5,16 +5,12 @@ import com.app.myapp.pojo.Slot;
 import com.app.myapp.repository.ICarRepository;
 import com.app.myapp.repository.ISlotRepository;
 import org.bson.types.ObjectId;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.*;
 
 @Service
 public class CarServiceImpl implements ICarService {
-
-    private static final Logger logger= LoggerFactory.getLogger(CarServiceImpl.class);
 
     @Autowired
     ICarRepository carRepository;
@@ -23,7 +19,7 @@ public class CarServiceImpl implements ICarService {
     ISlotRepository slotRepository;
 
     public CarServiceImpl() {
-        logger.info("In CarServiceImpl");
+        System.out.println("In CarServiceImpl");
     }
 
     @Override
@@ -32,7 +28,7 @@ public class CarServiceImpl implements ICarService {
         List<Car> carList=carRepository.findAll();
         if(!carList.isEmpty())
             return carList;
-        logger.info("car list empty");
+        System.out.println("car list empty");
         return null;
     }
 
@@ -40,14 +36,14 @@ public class CarServiceImpl implements ICarService {
     public Slot carEntry(Car car) {
         try {
             Slot slot=slotRepository.findFirstByCarIdNull();
-            logger.info("in carEntry :slot"+slot);
+            System.out.println("in carEntry :slot"+slot);
             if(slot.equals(null))
             {
-                logger.info("slot not found");
+                System.out.println("slot not found");
                 return null;
             }
             car=carRepository.save(car);
-            logger.info("car.save()"+car.get_id().toString());
+            System.out.println("car.save()"+car.get_id().toString());
             slot.setCarId(car.get_id());
             return  slotRepository.save(slot);
         }catch (Exception e) {
@@ -60,7 +56,7 @@ public class CarServiceImpl implements ICarService {
     public Car carExit(String plateNumber) {
         Car car=carRepository.findOneBy_id((carRepository.findByPlateNumber(plateNumber).get_id()));
         if(!(car==null)){
-           logger.info("carId :not found"+plateNumber);
+            System.out.println("carId :not found"+plateNumber);
            return null;
         }
         Slot slot=slotRepository.findFirstByCarId(car.get_id());
@@ -70,7 +66,7 @@ public class CarServiceImpl implements ICarService {
             slotRepository.save(slot);
         return car;
         }
-            logger.info("slot with car id not found"+plateNumber);
+        System.out.println("slot with car id not found"+plateNumber);
             return null;
 
     }
@@ -81,12 +77,12 @@ public class CarServiceImpl implements ICarService {
         Slot slot=null;
         car=carRepository.findByPlateNumber(plateNumber);
         if(car==null){
-            logger.info("car not found"+plateNumber);
+            System.out.println("car not found"+plateNumber);
             return null;
         }
         slot=slotRepository.findFirstByCarId(car.get_id());
         if(slot==null) {
-            logger.info("slot not found");
+            System.out.println("slot not found");
             return null;
         }
         return slot;
@@ -98,7 +94,7 @@ public class CarServiceImpl implements ICarService {
         if(!carList.isEmpty()){
             return carList;
         }
-        logger.info("car with "+color+"not found");
+        System.out.println("car with "+color+"not found");
         return null;
     }
 
@@ -106,7 +102,7 @@ public class CarServiceImpl implements ICarService {
     public Car getCar(String plateNumber) {
         Car car = carRepository.findByPlateNumber(plateNumber);
         if (car.equals(null)) {
-            logger.info("Car not Found");
+            System.out.println("Car not Found");
             return null;
         }
         return car;

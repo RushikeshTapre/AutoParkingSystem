@@ -1,11 +1,6 @@
 package com.app.myapp.service;
-
-import com.app.myapp.pojo.Car;
 import com.app.myapp.pojo.Slot;
-import com.app.myapp.repository.ICarRepository;
 import com.app.myapp.repository.ISlotRepository;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,9 +11,6 @@ import java.util.Optional;
 
 @Service
 public class SlotServiceImpl implements ISlotService {
-
-    private static final Logger logger= LoggerFactory.getLogger(SlotServiceImpl.class);
-
     @Autowired
     ISlotRepository slotRepository;
 
