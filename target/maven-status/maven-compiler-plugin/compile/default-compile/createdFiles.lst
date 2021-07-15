@@ -1,0 +1,15 @@
+com\app\myapp\service\CarServiceImpl.class
+com\app\myapp\service\SlotServiceImpl.class
+com\app\myapp\pojo\Slot.class
+com\app\myapp\util\RandomPortUtil.class
+com\app\myapp\repository\ICarRepository.class
+com\app\myapp\controller\CarController.class
+com\app\myapp\pojo\Car.class
+com\app\myapp\repository\ISlotRepository.class
+com\app\myapp\exception\ApiResponseException.class
+com\app\myapp\util\ResponseMessage.class
+com\app\myapp\AutoParkingSystemApplication.class
+com\app\myapp\service\ISlotService.class
+com\app\myapp\service\ICarService.class
+com\app\myapp\pojo\ApiResponse.class
+com\app\myapp\controller\SlotController.class

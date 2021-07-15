@@ -1,8 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.app.myapp.controller.CarControllerTest
--------------------------------------------------------------------------------
-Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.163 s <<< FAILURE! - in com.app.myapp.controller.CarControllerTest
-carEntry  Time elapsed: 0.135 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <Hello, World> but was: <>
-	at com.app.myapp.controller.CarControllerTest.carEntry(CarControllerTest.java:69)
-
