@@ -1,6 +1,9 @@
 package com.app.myapp.service;
+import com.app.myapp.controller.CarController;
 import com.app.myapp.pojo.Slot;
 import com.app.myapp.repository.ISlotRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,10 +16,12 @@ import java.util.Optional;
 public class SlotServiceImpl implements ISlotService {
     @Autowired
     ISlotRepository slotRepository;
+    private static final Logger logger= LoggerFactory.getLogger(SlotServiceImpl.class);
 
     @Override
     public boolean prepareSlot() {
         Slot newSlot;
+        logger.info("in slot :prepareSlot");
         try {
             for (int i = 1; i <= 10; i++) {
                 newSlot = new Slot(String.valueOf(i), null);
@@ -30,6 +35,7 @@ public class SlotServiceImpl implements ISlotService {
     }
     @Override
     public List<Slot> getAllSlot() {
+        logger.info("in slot:getAllSlot");
         return slotRepository.findAll();
     }
 

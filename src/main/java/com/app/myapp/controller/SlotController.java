@@ -4,6 +4,8 @@ import com.app.myapp.pojo.Car;
 import com.app.myapp.pojo.Slot;
 import com.app.myapp.service.ISlotService;
 import com.app.myapp.service.SlotServiceImpl;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +18,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/slots")
 public class SlotController {
+    private static final Logger logger= LoggerFactory.getLogger(SlotController.class);
 
    @Autowired
     SlotServiceImpl slotService;
@@ -28,7 +31,7 @@ public class SlotController {
             else
                 throw new RuntimeException("error in prepareSlot");
         } catch (RuntimeException e) {
-            System.out.println("err in prepareSlot" + e);
+            logger.info("err in prepareSlot" + e);
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
@@ -41,7 +44,7 @@ public class SlotController {
             else
                 throw new RuntimeException("error in prepareSlot");
         } catch (RuntimeException e) {
-            System.out.println("err in prepareSlot" + e);
+            logger.info("err in prepareSlot" + e);
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
