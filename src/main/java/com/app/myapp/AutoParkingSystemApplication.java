@@ -14,7 +14,7 @@ public class AutoParkingSystemApplication {
 
 
 	public static void main(String[] args) {
-		//RandomPortUtil.setRandomPort(5000, 10000);
+		RandomPortUtil.setRandomPort(5000, 10000);
 		SpringApplication.run(AutoParkingSystemApplication.class, args);
 	}
 }
