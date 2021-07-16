@@ -16,5 +16,5 @@ public interface ICarRepository extends MongoRepository<Car , String> {
     Car findByPlateNumber(String plateNumber);
     List<Car> findByColor(String color);
     Car findOneBy_id(ObjectId carId);
-    Car deleteById(String id);
+    //Car deleteById(String id);
 }
